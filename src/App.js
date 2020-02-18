@@ -2,13 +2,18 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 
+import Photo from "./PhotoSection/Photo";
+import Header from "./HeaderSection/Header";
+import Explainer from "./ExplainerSection/Explainer"
 
 
 
 function App() {
 
   const [data, setData] = useState();
-  const [error, setError] = useState();
+  // const [error, setError] = useState();
+  const [explainer, setExplainer] = useState();
+  const [title, setTitle] = useState();
 
   useEffect(() => {
     const fetchData = () => {
@@ -16,7 +21,8 @@ function App() {
         .then(res => {
           console.log(res);
           setData(res.data.hdurl);
-
+          setExplainer(res.data.explanation);
+          setTitle(res.data.title);
         });
     };
 
@@ -25,11 +31,9 @@ function App() {
 
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
-      <img src={data} alt="placeholder text" />
+      <Header titleData={title}/>
+      <Photo imgData={data}/>
+      <Explainer explainerData={explainer}/>
     </div>
   );
 }
