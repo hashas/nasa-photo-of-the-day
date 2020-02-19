@@ -1,8 +1,10 @@
-.App {
+/* .App {
   text-align: center;
   width: 700px;
   margin: 0px auto;
-}
+} */
+
+/* I commented-out the above and used styled-components instead */
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

@@ -6,7 +6,14 @@ import Photo from "./PhotoSection/Photo";
 import Header from "./HeaderSection/Header";
 import Explainer from "./ExplainerSection/Explainer"
 
+import styled from 'styled-components';
 
+const WrapperDiv = styled.div`
+  text-align: center;
+  // width: 700px;
+  margin: 0px auto;
+  font-family: 'Roboto mono', monospace;
+`;
 
 function App() {
 
@@ -30,11 +37,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <WrapperDiv>
       <Header titleData={title}/>
       <Photo imgData={data}/>
       <Explainer explainerData={explainer}/>
-    </div>
+    </WrapperDiv>
   );
 }
 
